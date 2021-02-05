@@ -1,5 +1,7 @@
 package com.sparta.wahdel;
 
+import com.sparta.wahdel.linkedlists.Node;
+
 public class Printer {
     public static void printMessage(String message) {
         System.out.println(message);
@@ -22,7 +24,7 @@ public class Printer {
     public static void printCircularLinkedList(Node node) {
         Node start = node;
         boolean stop = false;
-        while (stop == false) {
+        while (!stop) {
             System.out.println(node.data);
             node = node.getNextNode();
             if (node == start) {
