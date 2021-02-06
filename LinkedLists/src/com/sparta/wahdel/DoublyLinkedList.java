@@ -1,23 +1,17 @@
 package com.sparta.wahdel;
 
-public class DoublyLinkedList extends LinkedListAbstract
-{
-    private Node head;
+public class DoublyLinkedList extends LinkedListAbstract {
     private Node tail;
 
     public DoublyLinkedList() {
-        this.head = null;
+        this.setHead(null);
         this.tail = null;
     }
 
     public DoublyLinkedList(Node head) {
-        this.head = head;
+        this.setHead(head);
         this.tail = head;
     }
-
-//    public Node getHead() {
-//        return this.head;
-//    }
 
     public Node getTail() {
         return this.tail;
@@ -25,18 +19,10 @@ public class DoublyLinkedList extends LinkedListAbstract
 
     @Override
     public void add(Node node) {
-        if (head == null && tail == null) {
-            this.head = node;
-            this.head.setNextNode(null);
-            this.head.setPrevious(null);
-//        } else if (tail == null) {
-//            Node current = this.head;
-//            while (current.getNextNode() != null) {
-//                current = current.getNextNode();
-//            }
-//            current.setNextNode(node);
-//            current.getNextNode().setPrevious(current);
-//            current.getNextNode().setNextNode(null);
+        if (this.getHead() == null && tail == null) {
+            this.setHead(node);
+            this.getHead().setNextNode(null);
+            this.getHead().setPrevious(null);
         } else {
             tail.setNextNode(node);
             tail.getNextNode().setPrevious(tail);
@@ -47,12 +33,30 @@ public class DoublyLinkedList extends LinkedListAbstract
 
     @Override
     public void remove() {
-        head = head.getNextNode();
-        head.setPrevious(null);
+        if (!isEmpty()) {
+            this.setHead(getHead().getNextNode());
+            this.getHead().setPrevious(null);
+        }
+
     }
 
-    public void remove(Node node) {
-//        Node current;
-//        while ()
+    @Override
+    public void removeNode(Node node) {
+        if (!isEmpty()) {
+            Node current = this.getHead();
+            while (current.getData() != node.getData()) {
+                if (current.getNextNode() == null) {
+                    Printer.printErrorMessage("End of list reached. There is no value that matches.");
+                    break;
+                }
+                current = current.getNextNode();
+            }
+            if (current.getData() == node.getData() ) {
+                current.getNextNode().setPrevious(null);
+                current.getPrevious().setNextNode(null);
+                current.setPrevious(null);
+                current.setNextNode(null);
+            }
+        }
     }
 }

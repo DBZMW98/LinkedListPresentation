@@ -17,7 +17,19 @@ public abstract class LinkedListAbstract {
         return this.head;
     }
 
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
     public abstract void add(Node node);
+
     public abstract void remove();
+
+    public abstract void removeNode(Node node);
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
 
 }

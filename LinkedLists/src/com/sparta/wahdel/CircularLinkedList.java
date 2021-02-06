@@ -27,4 +27,9 @@ public class CircularLinkedList extends LinkedListAbstract{
     public void remove() {
 
     }
+
+    @Override
+    public void removeNode(Node node) {
+
+    }
 }
