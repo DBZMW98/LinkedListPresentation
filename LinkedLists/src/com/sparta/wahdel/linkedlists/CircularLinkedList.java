@@ -1,4 +1,4 @@
-package com.sparta.wahdel;
+package com.sparta.wahdel.linkedlists;
 
 import java.util.LinkedList;
 
@@ -18,9 +18,9 @@ public class CircularLinkedList extends LinkedListAbstract{
         if (this.head == null) {
             this.head = node;
             this.head.setNextNode(head);
-        } else {
+        } /*else {
 
-        }
+        }*/
     }
 
     @Override

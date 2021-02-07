@@ -1,4 +1,4 @@
-package com.sparta.wahdel;
+package com.sparta.wahdel.linkedlists;
 
 import java.util.LinkedList;
 

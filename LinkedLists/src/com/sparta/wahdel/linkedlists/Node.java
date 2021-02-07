@@ -1,11 +1,11 @@
-package com.sparta.wahdel;
+package com.sparta.wahdel.linkedlists;
 
 public class Node {
-    int data;
+    private int data;
     private Node nextNode;
     private Node previous;
 
-    Node(int data){
+    public Node(int data){
         this.data = data;
         this.nextNode = null;
     }

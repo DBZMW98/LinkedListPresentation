@@ -1,4 +1,6 @@
-package com.sparta.wahdel;
+package com.sparta.wahdel.linkedlists;
+
+import com.sparta.wahdel.Printer;
 
 public class SinglyLinkedLists {
     private Node head;
@@ -56,7 +58,7 @@ public class SinglyLinkedLists {
     public void removeNode() {
         if (!isEmpty()) {
             Node temp = head.getNextNode();
-            head = temp;
+            //head = temp;
         }
     }
 
@@ -75,7 +77,7 @@ public class SinglyLinkedLists {
                 current = current.getNextNode();
             }
             Node temp = head.getNextNode();
-            head = temp;
+            //head = temp;
         }
     }
 
