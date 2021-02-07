@@ -1,5 +1,7 @@
 package com.sparta.wahdel.linkedlists;
 
+import com.sparta.wahdel.Printer;
+
 public class DoublyLinkedList extends LinkedListAbstract {
     private Node tail;
 

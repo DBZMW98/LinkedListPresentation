@@ -25,7 +25,7 @@ public class Printer {
         Node start = node;
         boolean stop = false;
         while (!stop) {
-            System.out.println(node.data);
+            System.out.println(node.getData());
             node = node.getNextNode();
             if (node == start) {
                 stop = true;
